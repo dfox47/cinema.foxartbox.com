@@ -1,0 +1,290 @@
+@charset "utf-8";
+// sCSS Document
+
+
+
+@keyframes bgGradient {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+
+@keyframes blur {
+	0% {
+		filter: blur(0px);
+	}
+	50% {
+		filter: blur(4px);
+	}
+	100% {
+		filter: blur(0px);
+	}
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+@keyframes letterSpacing {
+	0% {
+		letter-spacing: .1em;
+	}
+	50% {
+		letter-spacing: .3em;
+	}
+	100% {
+		letter-spacing: .1em;
+	}
+}
+
+@keyframes loading {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+// Standart class [START]
+* {
+	border: 0 none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	&::after,
+	&::before {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+a {
+	transition: $transition;
+
+	&.link_to_block {
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+}
+
+br {
+	clear: both;
+}
+
+fieldset {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	height: 2px;
+	display: block;
+	margin: 3% 0;
+	overflow: hidden;
+	width: 100%;
+}
+
+iframe {
+	border: 0 none;
+	display: block;
+	height: 100%;
+	margin: 20px auto;
+	width: 70%;
+}
+
+img {
+	border: 0 none;
+	margin: 0;
+	max-width: 100%;
+}
+
+input {
+	border: 0 none;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 100;
+	padding: .5em 1em;
+}
+
+p {
+	margin: .6em 0;
+	padding: 0;
+	text-indent: 0;
+}
+
+pre {
+	display: block;
+	overflow: scroll;
+}
+
+table {
+	border: 0 none;
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+}
+
+textarea {
+	border: 0 none;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 100;
+	padding: .5em 1em;
+	resize: none;
+}
+
+td {
+	padding: 5px;
+	vertical-align: top;
+}
+
+ul {
+	list-style: none;
+
+	li {
+		list-style: none;
+	}
+}
+// Standart class [END]
+
+
+
+// help classes [START]
+.absolute {
+	position: absolute;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.clear {
+	clear: both;
+}
+
+.clr {
+	@extend .clear;
+}
+
+.fl,
+.floatleft {
+	float: left;
+}
+
+.fr,
+.floatright {
+	float: right;
+}
+
+// font-sizes [START]
+$fontSizes: 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30;
+
+@each $fontSize in $fontSizes {
+	.fs#{$fontSize} {
+		font-size: #{$fontSize}px;
+	}
+}
+// font-sizes [END]
+
+.h100 {
+	height: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+.no-js {
+	.fa {
+		display: none;
+	}
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.overflow_hidden {
+	overflow: hidden;
+}
+
+.preload {
+	* {
+		transition: none !important;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.td {
+	display: table-cell;
+}
+
+.text-center {
+	text-align: center;
+	text-indent: 0;
+}
+
+.text-left {
+	text-align: left;
+	text-indent: 0;
+}
+
+.text-right {
+	text-align: right;
+	text-indent: 0;
+}
+
+.tr {
+	display: table-row;
+}
+
+.v_bottom,
+.vertical_bottom {
+	vertical-align: bottom;
+}
+
+.v_middle,
+.vertical_middle {
+	vertical-align: middle;
+}
+
+.v_top,
+.vertical_top {
+	vertical-align: top;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+// font-sizes [START]
+$widthSizes: 0, 30, 50, 100;
+
+@each $widthSize in $widthSizes {
+	.w#{$widthSize} {
+		width: #{$widthSize}#{'%'};
+	}
+}
+// font-sizes [END]
+// help classes [END]
